@@ -1,16 +1,18 @@
 {
-  "framework": "other",
-  "rewrites": [{ "source": "/:a*", "destination": "/" }],
+  "version": 2,
   "builds": [
     {
-      "src": "app.py",
+      "src": "my-flask-app/app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "my-flask-app/app.py"
     }
-  ]
+  ],
+  "env": {
+    "FLASK_ENV": "production"
+  }
 }
